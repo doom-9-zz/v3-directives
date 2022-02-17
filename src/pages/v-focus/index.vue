@@ -5,16 +5,7 @@ const value = ref("You are about to copy these values");
 </script>
 
 <template>
-  <button v-copy="value">Click my copy</button>
-  <button
-    @click="
-      () => {
-        value = 'Changed';
-      }
-    "
-  >
-    change value
-  </button>
+  <input v-focus />
 </template>
 
 <style></style>

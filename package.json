@@ -15,6 +15,7 @@
   },
   "scripts": {
     "dev": "vite",
+    "build-lib": "vue-tsc --noEmit && vite build -c ./vite.config.lib.ts",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview"
   },
