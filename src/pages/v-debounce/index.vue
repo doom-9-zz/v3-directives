@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const handle = () => {
-  window.alert("I was executed");
-};
+  window.alert('I was executed')
+}
 </script>
 
 <template>
