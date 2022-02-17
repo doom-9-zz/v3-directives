@@ -1,4 +1,10 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
+import "./css/base.css";
+import { vCopy } from "../lib/main";
 
-createApp(App).mount('#app')
+const app = createApp(App);
+
+app.directive("copy", vCopy);
+
+app.mount("#app");
