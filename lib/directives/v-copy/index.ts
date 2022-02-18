@@ -1,35 +1,38 @@
 import { Directive } from 'vue'
 
-let clickHandler: (() => void) | null = null
+let copyHandler: (() => void) | null = null
 
-const copyHandler = (value: string): void => {
-  navigator.clipboard
-    .writeText(value)
-    .then(() => {
-      window.alert('Copy successful')
-    })
-    .catch(() => {
-      window.alert('Copy failed')
-    })
-}
+let copyValue: string | null = null
 
 const vCopy: Directive = {
   mounted(el, binding) {
-    clickHandler = () => {
-      copyHandler(binding.value)
+    const { value } = binding
+    if (value) {
+      copyValue = String(value)
+      copyHandler = () => {
+        if (!copyValue) return
+        navigator.clipboard
+          .writeText(copyValue)
+          .then(() => {
+            window.alert('Copy successful')
+          })
+          .catch(() => {
+            window.alert('Copy failed')
+          })
+      }
     }
-    el.addEventListener('click', clickHandler)
+    el.addEventListener('click', copyHandler)
   },
   updated(el, binding) {
-    el.removeEventListener('click', clickHandler)
-    clickHandler = () => {
-      copyHandler(binding.value)
+    const { value } = binding
+    if (value) {
+      copyValue = String(value)
     }
-    el.addEventListener('click', clickHandler)
   },
   beforeUnmount(el) {
-    el.removeEventListener('click', clickHandler)
-    clickHandler = null
+    el.removeEventListener('click', copyHandler)
+    copyHandler = null
+    copyValue = null
   }
 }
 export default vCopy

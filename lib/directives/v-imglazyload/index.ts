@@ -16,17 +16,21 @@ const callback: IntersectionObserverCallback = (entries) => {
   })
 }
 
-const observer = new IntersectionObserver(callback, options)
+let observer: IntersectionObserver | null = null
 
 const vImgLazyLoad: Directive = {
   mounted(el, binding) {
     if (el.tagName !== 'IMG') return
+    observer = new IntersectionObserver(callback, options)
     const { value } = binding
     el.setAttribute('data-src', value)
     observer.observe(el)
   },
   beforeUnmount() {
-    observer.disconnect()
+    if (observer) {
+      observer.disconnect()
+      observer = null
+    }
   }
 }
 export default vImgLazyLoad
