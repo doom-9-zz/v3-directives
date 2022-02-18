@@ -1,6 +1,6 @@
 import { Directive } from 'vue'
 
-let clickHandler: () => void
+let clickHandler: (() => void) | null = null
 
 const copyHandler = (value: string): void => {
   navigator.clipboard
@@ -26,6 +26,10 @@ const vCopy: Directive = {
       copyHandler(binding.value)
     }
     el.addEventListener('click', clickHandler)
+  },
+  beforeUnmount(el) {
+    el.removeEventListener('click', clickHandler)
+    clickHandler = null
   }
 }
 export default vCopy

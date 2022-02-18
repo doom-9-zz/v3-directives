@@ -2,7 +2,14 @@ import { createApp } from 'vue'
 import router from './router/index'
 import App from './App.vue'
 import './css/base.css'
-import { vCopy, vFocus, vDebounce, vLongPress, vLoading } from '../lib/main'
+import {
+  vCopy,
+  vFocus,
+  vDebounce,
+  vLongPress,
+  vLoading,
+  vImgLazyLoad
+} from '../lib/main'
 
 const app = createApp(App)
 
@@ -13,5 +20,6 @@ app.directive('focus', vFocus)
 app.directive('debounce', vDebounce)
 app.directive('longpress', vLongPress)
 app.directive('loading', vLoading)
+app.directive('imglazyload', vImgLazyLoad)
 
 app.mount('#app')

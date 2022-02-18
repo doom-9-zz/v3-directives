@@ -89,7 +89,7 @@ const vLoading: Directive = {
       maskElement = null
     }
   },
-  unmounted() {
+  beforeUnmount() {
     maskElement = null
   }
 }
