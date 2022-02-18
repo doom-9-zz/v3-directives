@@ -5,5 +5,7 @@ const handle = () => {
 </script>
 
 <template>
-  <div v-longpress:1000="handle">Stay with me for a long time</div>
+  <h1>example</h1>
+  <button v-longpress:1000="handle">Stay with me for a long time</button>
+  <hr />
 </template>

@@ -29,6 +29,7 @@ li {
   box-sizing: border-box;
   text-align: center;
   border-bottom: 1px solid #ccc;
+  transition: all 0.3s;
 }
 li:hover {
   background: #eee;

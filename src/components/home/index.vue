@@ -24,22 +24,26 @@ main {
 }
 
 header {
-  height: 80px;
+  height: 60px;
   border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 div {
   display: flex;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 60px);
 }
 
 nav {
   width: 200px;
   border-right: 1px solid #ccc;
+  overflow: auto;
+  box-sizing: border-box;
 }
 
 article {
   flex: 1;
   overflow: auto;
+  padding: 10px;
 }
 </style>

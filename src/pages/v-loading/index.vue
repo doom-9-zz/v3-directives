@@ -9,6 +9,7 @@ const changeLoading = () => {
 </script>
 
 <template>
+  <h1>example</h1>
   <div
     v-loading="loading"
     :style="{
@@ -19,4 +20,5 @@ const changeLoading = () => {
     }"
   ></div>
   <button @click="changeLoading">点击</button>
+  <hr />
 </template>
