@@ -28,9 +28,11 @@ const vLongPress: Directive = {
   updated(el, binding) {
     if (elMapToMouseDownHandlers.has(el)) {
       el.removeEventListener('mousedown', elMapToMouseDownHandlers.get(el))
+      elMapToMouseDownHandlers.delete(el)
     }
     if (elMapToMouseUpHandlers.has(el)) {
       el.removeEventListener('mouseup', elMapToMouseUpHandlers.get(el))
+      elMapToMouseUpHandlers.delete(el)
     }
     addEventListener(el, binding)
   },

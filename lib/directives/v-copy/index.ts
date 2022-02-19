@@ -30,6 +30,7 @@ const vCopy: Directive = {
   updated(el, binding) {
     if (elMapToHandlers.has(el)) {
       el.removeEventListener('click', elMapToHandlers.get(el))
+      elMapToHandlers.delete(el)
     }
     addEventListener(el, binding)
   },

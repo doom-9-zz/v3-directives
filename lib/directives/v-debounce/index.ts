@@ -42,6 +42,8 @@ const vDebounce: Directive = {
   updated(el, binding) {
     if (elMapToHandlers.has(el)) {
       el.removeEventListener(elMapToEventName.get(el), elMapToHandlers.get(el))
+      elMapToHandlers.delete(el)
+      elMapToEventName.delete(el)
     }
 
     addEventListener(el, binding)

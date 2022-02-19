@@ -35,7 +35,6 @@ const vImgLazyLoad: Directive = {
   mounted(el, binding) {
     observerHandler(el, binding)
   },
-
   updated(el, binding) {
     observerHandler(el, binding)
   },
