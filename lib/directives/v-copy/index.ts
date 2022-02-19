@@ -1,5 +1,6 @@
 import { Directive, DirectiveBinding } from 'vue'
-import { elMapToHandlers } from '../../utils'
+
+const elMapToHandlers: WeakMap<Element, () => void> = new WeakMap()
 
 const getCopyHandler = (value: unknown): (() => void) => {
   return (): void => {
@@ -31,6 +32,9 @@ const vCopy: Directive = {
       el.removeEventListener('click', elMapToHandlers.get(el))
     }
     addEventListener(el, binding)
+  },
+  beforeUnmount(el) {
+    elMapToHandlers.delete(el)
   }
 }
 export default vCopy

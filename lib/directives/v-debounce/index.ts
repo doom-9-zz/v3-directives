@@ -1,9 +1,9 @@
 import { Directive, DirectiveBinding } from 'vue'
-import {
-  elMapToEventName,
-  elMapToHandlers,
-  isFunction
-} from '../../utils/index'
+import { isFunction } from '../../utils/index'
+
+const elMapToHandlers: WeakMap<Element, () => void> = new WeakMap()
+
+const elMapToEventName: WeakMap<Element, string> = new WeakMap()
 
 const addEventListener = (el: Element, binding: DirectiveBinding): void => {
   const { value, arg } = binding
@@ -45,6 +45,10 @@ const vDebounce: Directive = {
     }
 
     addEventListener(el, binding)
+  },
+  beforeUnmount(el) {
+    elMapToHandlers.delete(el)
+    elMapToEventName.delete(el)
   }
 }
 export default vDebounce

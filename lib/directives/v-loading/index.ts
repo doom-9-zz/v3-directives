@@ -1,10 +1,9 @@
-import {
-  elMapToMaskElement,
-  isBoolean,
-  loadingSvgNode,
-  elMapToHasChangedPosition
-} from '../../utils/index'
+import { isBoolean, loadingSvgNode } from '../../utils/index'
 import { Directive } from 'vue'
+
+const elMapToMaskElement: WeakMap<Element, HTMLDivElement> = new WeakMap()
+
+const elMapToHasChangedPosition: WeakMap<Element, boolean> = new WeakMap()
 
 const appendChild = (el: HTMLElement): void => {
   const loadingWrapper = document.createElement('div')

@@ -6,16 +6,6 @@ export function isBoolean(x: any): boolean {
   return typeof x === 'boolean'
 }
 
-export const elMapToHandlers: WeakMap<Element, () => void> = new WeakMap()
-
-export const elMapToMaskElement: WeakMap<Element, HTMLDivElement> =
-  new WeakMap()
-
-export const elMapToHasChangedPosition: WeakMap<Element, boolean> =
-  new WeakMap()
-
-export const elMapToEventName: WeakMap<Element, string> = new WeakMap()
-
 export const loadingSvgNode = `
 <svg width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg">
     <defs>
