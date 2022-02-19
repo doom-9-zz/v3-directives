@@ -2,8 +2,9 @@ import { Directive, DirectiveBinding } from 'vue'
 
 const elMapToHandlers: WeakMap<Element, () => void> = new WeakMap()
 
-const getCopyHandler = (value: unknown): (() => void) => {
-  return (): void => {
+const addEventListener = (el: Element, binding: DirectiveBinding) => {
+  const { value } = binding
+  const copyHandler = (): void => {
     navigator.clipboard
       .writeText(String(value))
       .then(() => {
@@ -13,11 +14,6 @@ const getCopyHandler = (value: unknown): (() => void) => {
         window.alert('Copy failed')
       })
   }
-}
-
-const addEventListener = (el: Element, binding: DirectiveBinding) => {
-  const { value } = binding
-  const copyHandler = getCopyHandler(value)
 
   elMapToHandlers.set(el, copyHandler)
   el.addEventListener('click', copyHandler)

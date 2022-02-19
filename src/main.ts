@@ -8,7 +8,8 @@ import {
   vDebounce,
   vLongPress,
   vLoading,
-  vImgLazyLoad
+  vImgLazyLoad,
+  vOnOnce
 } from '../lib/main'
 
 const app = createApp(App)
@@ -21,5 +22,6 @@ app.directive('debounce', vDebounce)
 app.directive('longpress', vLongPress)
 app.directive('loading', vLoading)
 app.directive('imglazyload', vImgLazyLoad)
+app.directive('ononce', vOnOnce)
 
 app.mount('#app')
