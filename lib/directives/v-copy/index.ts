@@ -1,38 +1,39 @@
 import { Directive } from 'vue'
 
-let copyHandler: (() => void) | null = null
+const elMapToHandlers: WeakMap<Element, () => void> = new WeakMap()
 
-let copyValue: string | null = null
+const getCopyHandler = (value: string): (() => void) => {
+  return (): void => {
+    navigator.clipboard
+      .writeText(String(value))
+      .then(() => {
+        window.alert('Copy successful')
+      })
+      .catch(() => {
+        window.alert('Copy failed')
+      })
+  }
+}
 
 const vCopy: Directive = {
   mounted(el, binding) {
     const { value } = binding
-    if (value) {
-      copyValue = String(value)
-      copyHandler = () => {
-        if (!copyValue) return
-        navigator.clipboard
-          .writeText(copyValue)
-          .then(() => {
-            window.alert('Copy successful')
-          })
-          .catch(() => {
-            window.alert('Copy failed')
-          })
-      }
-    }
+    if (!value) return
+    const copyHandler = getCopyHandler(value)
+
+    elMapToHandlers.set(el, copyHandler)
     el.addEventListener('click', copyHandler)
   },
   updated(el, binding) {
     const { value } = binding
-    if (value) {
-      copyValue = String(value)
+    if (!value) return
+    if (elMapToHandlers.has(el)) {
+      el.removeEventListener('click', elMapToHandlers.get(el))
     }
-  },
-  beforeUnmount(el) {
-    el.removeEventListener('click', copyHandler)
-    copyHandler = null
-    copyValue = null
+
+    const copyHandler = getCopyHandler(value)
+    elMapToHandlers.set(el, copyHandler)
+    el.addEventListener('click', copyHandler)
   }
 }
 export default vCopy
