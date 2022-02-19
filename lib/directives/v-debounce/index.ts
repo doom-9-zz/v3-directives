@@ -1,7 +1,9 @@
 import { Directive, DirectiveBinding } from 'vue'
-import { elMapToHandlers, isFunction } from '../../utils/index'
-
-const elMapToEventName: WeakMap<Element, string> = new WeakMap()
+import {
+  elMapToEventName,
+  elMapToHandlers,
+  isFunction
+} from '../../utils/index'
 
 const addEventListener = (el: Element, binding: DirectiveBinding): void => {
   const { value, arg } = binding
