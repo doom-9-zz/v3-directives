@@ -6,14 +6,14 @@ const list = Array.from({ length: 100 }).map((_, i) => ({
 }))
 </script>
 <template>
-  <h1>introduce</h1>
+  <h1>Introduce</h1>
   <p>Lazy load picture</p>
   <hr />
-  <h1>code</h1>
+  <h1>Code</h1>
   <highlightjs language="js" :code="lazyLoadDemo" />
   <hr />
 
-  <h1>example</h1>
+  <h1>Example</h1>
   <img
     v-for="item in list"
     :key="item.id"

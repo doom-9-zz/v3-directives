@@ -87,3 +87,8 @@ const handler = () => {
 <template>
   <button v-ononce:click="handler">only alert once</button>
 </template>`
+
+export const readmeDemo = `
+import { vCopy } from 'v3-directives'
+createApp(App).directive('copy', vCopy).mount('#app')
+`

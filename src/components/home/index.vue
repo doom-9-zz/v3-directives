@@ -24,14 +24,14 @@ main {
 }
 
 header {
-  height: 60px;
+  height: 0px;
   border-bottom: 1px solid #ccc;
   box-sizing: border-box;
 }
 
 div {
   display: flex;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 0px);
 }
 
 nav {
