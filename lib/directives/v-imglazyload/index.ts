@@ -1,4 +1,4 @@
-import { Directive } from 'vue'
+import { Directive, DirectiveBinding } from 'vue'
 
 const options = {
   root: document.querySelector('html'),
@@ -9,27 +9,39 @@ const callback: IntersectionObserverCallback = (entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       const img = entry.target as HTMLImageElement
-      if (img.src === '' || img.src === null || img.src === undefined) {
+      if (img.src !== img.dataset.src) {
         img.src = img.dataset.src || ''
       }
     }
   })
 }
 
-let observer: IntersectionObserver | null = null
+const observer: IntersectionObserver = new IntersectionObserver(
+  callback,
+  options
+)
+
+const observerHandler: (el: Element, binding: DirectiveBinding) => void = (
+  el,
+  binding
+) => {
+  if (el.tagName !== 'IMG') return
+  const { value } = binding
+  el.setAttribute('data-src', String(value))
+  observer.observe(el)
+}
 
 const vImgLazyLoad: Directive = {
   mounted(el, binding) {
-    if (el.tagName !== 'IMG') return
-    observer = new IntersectionObserver(callback, options)
-    const { value } = binding
-    el.setAttribute('data-src', value)
-    observer.observe(el)
+    observerHandler(el, binding)
   },
-  beforeUnmount() {
+
+  updated(el, binding) {
+    observerHandler(el, binding)
+  },
+  beforeUnmount(el) {
     if (observer) {
-      observer.disconnect()
-      observer = null
+      observer.unobserve(el)
     }
   }
 }

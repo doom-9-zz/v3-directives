@@ -2,7 +2,7 @@ import { Directive } from 'vue'
 
 const elMapToHandlers: WeakMap<Element, () => void> = new WeakMap()
 
-const getCopyHandler = (value: string): (() => void) => {
+const getCopyHandler = (value: unknown): (() => void) => {
   return (): void => {
     navigator.clipboard
       .writeText(String(value))
@@ -18,7 +18,6 @@ const getCopyHandler = (value: string): (() => void) => {
 const vCopy: Directive = {
   mounted(el, binding) {
     const { value } = binding
-    if (!value) return
     const copyHandler = getCopyHandler(value)
 
     elMapToHandlers.set(el, copyHandler)
@@ -26,7 +25,6 @@ const vCopy: Directive = {
   },
   updated(el, binding) {
     const { value } = binding
-    if (!value) return
     if (elMapToHandlers.has(el)) {
       el.removeEventListener('click', elMapToHandlers.get(el))
     }
