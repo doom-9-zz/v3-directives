@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { copyDemo } from '../../const/const'
 
 const value = ref('You are about to copy these values')
 </script>
@@ -10,7 +11,7 @@ const value = ref('You are about to copy these values')
   <hr />
   <h1>example</h1>
   <p>Value to be copied:{{ value }}</p>
-  <button v-copy="value">Click my copy</button>
+  <button v-copy="value">click me to copy</button>
   <button
     @click="
       () => {
@@ -18,30 +19,12 @@ const value = ref('You are about to copy these values')
       }
     "
   >
-    change value
+    change the value to be copied
   </button>
-  <input type="text" />
+  <input type="text" placeholder="paste here" />
   <hr />
   <h1>code</h1>
-  <pre>{{ `
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const value = ref('You are about to copy these values')
-</script>
-
-<template>
-  <button v-copy="value">Click my copy</button>
-  <button
-    @click="
-      () => {
-        value = 'Changed'
-      }
-    "
-  >
-    change value
-  </button>
-</template>` }}</pre>
+  <highlightjs language="js" :code="copyDemo" />
 </template>
 
 <style></style>

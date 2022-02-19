@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { longPressDemo } from '../../const/const'
 const handle = () => {
   window.alert('long press')
 }
@@ -12,13 +13,5 @@ const handle = () => {
   <button v-longpress:1000="handle">Stay with me for a long time</button>
   <hr />
   <h1>code</h1>
-  <pre>{{ `<script setup lang="ts">
-const handle = () => {
-  window.alert('long press')
-}
-</script>
-
-<template>
-  <button v-longpress:1000="handle">Stay with me for a long time</button>
-</template>` }}</pre>
+  <highlightjs language="js" :code="longPressDemo" />
 </template>

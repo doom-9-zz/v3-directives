@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { debounceDemo } from '../../const/const'
 const handle = () => {
   window.alert('I was executed')
 }
@@ -12,15 +13,7 @@ const handle = () => {
   <button v-debounce:click-1000="handle">Quick click on me</button>
   <hr />
   <h1>code</h1>
-  <pre>{{ `<script setup lang="ts">
-const handle = () => {
-  window.alert('I was executed')
-}
-</script>
-
-<template>
-  <button v-debounce:click-1000="handle">Quick click on me</button>
-</template>` }}</pre>
+  <highlightjs language="js" :code="debounceDemo" />
 </template>
 
 <style></style>

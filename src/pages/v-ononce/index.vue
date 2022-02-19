@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onOnceDemo } from '../../const/const'
 const handler = () => {
   window.alert('Hello!')
 }
@@ -11,12 +12,5 @@ const handler = () => {
   <button v-ononce:click="handler">only alert once</button>
   <hr />
   <h1>code</h1>
-  <pre>{{ `<script setup lang="ts">
-const handler = () => {
-  window.alert('Hello!')
-}
-</script>
-<template>
-  <button v-ononce:click="handler">only alert once</button>
-</template>` }}</pre>
+  <highlightjs language="js" :code="onOnceDemo" />
 </template>

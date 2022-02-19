@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { focusDemo } from '../../const/const'
+</script>
 <template>
   <h1>introduce</h1>
   <p>Auto focus on the specified element</p>
@@ -7,8 +9,5 @@
   <input v-focus />
   <hr />
   <h1>code</h1>
-  <pre>{{ `
-<template>
-  <input v-focus />
-</template>` }}</pre>
+  <highlightjs language="js" :code="focusDemo" />
 </template>
