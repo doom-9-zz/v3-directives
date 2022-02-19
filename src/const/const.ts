@@ -92,3 +92,14 @@ export const readmeDemo = `
 import { vCopy } from 'v3-directives'
 createApp(App).directive('copy', vCopy).mount('#app')
 `
+
+export const clickOutSideDemo = `
+<script setup lang="ts">
+const handler = () => {
+  window.alert('clicked outside')
+}
+</script>
+<template>
+  <button v-clickoutside="handler">click</button>
+</template>
+`

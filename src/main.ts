@@ -9,7 +9,8 @@ import {
   vLongPress,
   vLoading,
   vImgLazyLoad,
-  vOnOnce
+  vOnOnce,
+  vClickOutSide
 } from '../lib/main'
 
 import 'highlight.js/styles/stackoverflow-light.css'
@@ -31,5 +32,6 @@ app.directive('longpress', vLongPress)
 app.directive('loading', vLoading)
 app.directive('imglazyload', vImgLazyLoad)
 app.directive('ononce', vOnOnce)
+app.directive('clickoutside', vClickOutSide)
 
 app.mount('#app')
