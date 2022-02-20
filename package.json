@@ -14,7 +14,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build-lib": "vue-tsc --noEmit && vite build -c ./vite.config.lib.ts",
+    "build-gulp-lib": "vue-tsc --noEmit && vite build -c ./vite.config.lib.ts",
+    "build-tsc-lib": "vue-tsc --noEmit && tsc -b --force ./lib/tsconfig.esm.json",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "prepare": "husky install"
