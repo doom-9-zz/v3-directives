@@ -103,3 +103,21 @@ const handler = () => {
   <button v-clickoutside="handler">click</button>
 </template>
 `
+
+export const hoverDemo = `<script setup lang="ts">
+const handler = () => {
+  window.alert('hover')
+}
+</script>
+<template>
+  <div
+    v-hover="handler"
+    :style="{
+      width: '200px',
+      height: '200px',
+      border: '1px solid #ccc'
+    }"
+  >
+    Hover
+  </div>
+</template>`

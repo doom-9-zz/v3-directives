@@ -10,8 +10,9 @@ import {
   vLoading,
   vImgLazyLoad,
   vOnOnce,
-  vClickOutSide
-} from 'v3-directives'
+  vClickOutSide,
+  vHover
+} from '../code/main'
 
 import 'highlight.js/styles/stackoverflow-light.css'
 import hljs from 'highlight.js/lib/core'
@@ -33,5 +34,6 @@ app.directive('loading', vLoading)
 app.directive('imglazyload', vImgLazyLoad)
 app.directive('ononce', vOnOnce)
 app.directive('clickoutside', vClickOutSide)
+app.directive('hover', vHover)
 
 app.mount('#app')

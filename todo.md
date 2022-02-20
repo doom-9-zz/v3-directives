@@ -1,6 +1,5 @@
-- [ ] v-click-outside.
-- [ ] v-hover.
 - [ ] v-scroll.
 - [ ] 闪烁.
 - [ ] 调整大小.
 - [ ] drag.
+- [ ] 省略.

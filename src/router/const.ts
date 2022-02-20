@@ -6,6 +6,7 @@ import vLoading from '../pages/v-loading/index.vue'
 import Readme from '../pages/readme/index.vue'
 import vImgLazyLoad from '../pages/v-imglazyload/index.vue'
 import vOnOnce from '../pages/v-ononce/index.vue'
+import vHover from '../pages/v-hover/index.vue'
 import vClickOutSide from '../pages/v-clickoutside/index.vue'
 
 export default [
@@ -17,5 +18,6 @@ export default [
   { path: '/loading', component: vLoading, name: 'v-loading' },
   { path: '/imglazyload', component: vImgLazyLoad, name: 'v-imglazyload' },
   { path: '/clickoutside', component: vClickOutSide, name: 'v-clickoutside' },
-  { path: '/ononce', component: vOnOnce, name: 'v-ononce' }
+  { path: '/ononce', component: vOnOnce, name: 'v-ononce' },
+  { path: '/hover', component: vHover, name: 'v-hover' }
 ]
