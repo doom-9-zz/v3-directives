@@ -88,13 +88,11 @@ const handler = () => {
   <button v-ononce:click="handler">only alert once</button>
 </template>`
 
-export const readmeDemo = `
-import { vCopy } from 'v3-directives'
+export const readmeDemo = `import { vCopy } from 'v3-directives'
 createApp(App).directive('copy', vCopy).mount('#app')
 `
 
-export const clickOutSideDemo = `
-<script setup lang="ts">
+export const clickOutSideDemo = `<script setup lang="ts">
 const handler = () => {
   window.alert('clicked outside')
 }
@@ -137,4 +135,10 @@ const text =
   >
     {{ text }}
   </div>
+</template>`
+
+export const moneyDemo = `<script setup lang="ts">
+</script>
+<template>
+  <span v-money="123456789.123456"></span>
 </template>`

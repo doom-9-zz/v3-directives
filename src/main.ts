@@ -12,7 +12,8 @@ import {
   vOnOnce,
   vClickOutSide,
   vHover,
-  vTextEllipsis
+  vTextEllipsis,
+  vMoney
 } from '../code/main'
 
 import 'highlight.js/styles/stackoverflow-light.css'
@@ -37,5 +38,6 @@ app.directive('ononce', vOnOnce)
 app.directive('clickoutside', vClickOutSide)
 app.directive('hover', vHover)
 app.directive('textellipsis', vTextEllipsis)
+app.directive('money', vMoney)
 
 app.mount('#app')
