@@ -8,6 +8,7 @@ import vImgLazyLoad from '../pages/v-imglazyload/index.vue'
 import vOnOnce from '../pages/v-ononce/index.vue'
 import vHover from '../pages/v-hover/index.vue'
 import vClickOutSide from '../pages/v-clickoutside/index.vue'
+import vTextEllipsis from '../pages/v-textellipsis/index.vue'
 
 export default [
   { path: '/', component: Readme, name: 'Readme' },
@@ -19,5 +20,6 @@ export default [
   { path: '/imglazyload', component: vImgLazyLoad, name: 'v-imglazyload' },
   { path: '/clickoutside', component: vClickOutSide, name: 'v-clickoutside' },
   { path: '/ononce', component: vOnOnce, name: 'v-ononce' },
-  { path: '/hover', component: vHover, name: 'v-hover' }
+  { path: '/hover', component: vHover, name: 'v-hover' },
+  { path: '/textellipsis', component: vTextEllipsis, name: 'v-textellipsis' }
 ]

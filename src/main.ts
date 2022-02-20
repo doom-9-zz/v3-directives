@@ -11,7 +11,8 @@ import {
   vImgLazyLoad,
   vOnOnce,
   vClickOutSide,
-  vHover
+  vHover,
+  vTextEllipsis
 } from '../code/main'
 
 import 'highlight.js/styles/stackoverflow-light.css'
@@ -35,5 +36,6 @@ app.directive('imglazyload', vImgLazyLoad)
 app.directive('ononce', vOnOnce)
 app.directive('clickoutside', vClickOutSide)
 app.directive('hover', vHover)
+app.directive('textellipsis', vTextEllipsis)
 
 app.mount('#app')
