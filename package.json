@@ -6,12 +6,12 @@
     "lib",
     "README.md"
   ],
-  "main": "./dist/v3-directives.umd.js",
-  "module": "./dist/v3-directives.es.js",
+  "main": "lib/main.js",
+  "module": "es/main.js",
   "exports": {
     ".": {
-      "import": "./dist/v3-directives.es.js",
-      "require": "./dist/v3-directives.umd.js"
+      "import": "./es/main.js",
+      "require": "./lib/main.js"
     }
   },
   "scripts": {
