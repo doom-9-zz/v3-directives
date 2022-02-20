@@ -1,6 +1,6 @@
 {
   "name": "v3-directives",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "files": [
     "es",
     "lib",
