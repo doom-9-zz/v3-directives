@@ -11,7 +11,7 @@ import {
   vImgLazyLoad,
   vOnOnce,
   vClickOutSide
-} from '../lib/main'
+} from '../code/main'
 
 import 'highlight.js/styles/stackoverflow-light.css'
 import hljs from 'highlight.js/lib/core'
