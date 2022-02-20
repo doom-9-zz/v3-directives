@@ -1,6 +1,6 @@
 {
   "name": "v3-directives",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "files": [
     "es",
     "lib",
@@ -25,6 +25,7 @@
   "dependencies": {
     "@highlightjs/vue-plugin": "^2.1.0",
     "highlight.js": "^11.4.0",
+    "v3-directives": "^0.0.2",
     "vue": "^3.2.25",
     "vue-router": "4"
   },
