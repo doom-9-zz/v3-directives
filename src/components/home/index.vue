@@ -59,12 +59,15 @@ const navOpen = ref(false)
     border-right: 1px solid #ccc;
     overflow: auto;
     box-sizing: border-box;
+    height: 100%;
   }
 
   article {
     flex: 1;
     overflow: auto;
     padding: 10px;
+    height: 100%;
+    box-sizing: border-box;
   }
 }
 
@@ -114,6 +117,8 @@ const navOpen = ref(false)
   article {
     overflow: auto;
     padding: 10px;
+    height: 100%;
+    box-sizing: border-box;
   }
 }
 </style>
