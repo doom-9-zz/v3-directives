@@ -2,7 +2,9 @@
   "name": "v3-directives",
   "version": "0.0.1",
   "files": [
-    "dist"
+    "es",
+    "lib",
+    "README.md"
   ],
   "main": "./dist/v3-directives.umd.js",
   "module": "./dist/v3-directives.es.js",
@@ -41,6 +43,9 @@
     "vite": "^2.8.0",
     "vue-tsc": "^0.29.8"
   },
+  "peerDependencies": {
+    "vue": "^3.2.25"
+  },
   "lint-staged": {
     "*.js": [
       "prettier --write",
@@ -64,5 +69,18 @@
     "*.md": [
       "prettier --write --parser markdown --prose-wrap never"
     ]
-  }
+  },
+  "sideEffects": false,
+  "homepage": "https://v3-directives.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doom-9/v3-directives"
+  },
+  "keywords": [
+    "typescript",
+    "directives Collection",
+    "vue",
+    "directive",
+    "vue3"
+  ]
 }
