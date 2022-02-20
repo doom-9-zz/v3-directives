@@ -73,19 +73,13 @@ const navOpen = ref(false)
 
 @media screen and (max-width: 768px) {
   main {
-    height: 100vh;
     width: 100vw;
-    overflow: auto;
   }
 
   header {
     height: 0px;
     border-bottom: 1px solid #ccc;
     box-sizing: border-box;
-  }
-
-  div {
-    height: calc(100vh - 0px);
   }
 
   .menu {
@@ -100,11 +94,10 @@ const navOpen = ref(false)
 
   nav {
     width: 200px;
-    height: 100%;
     border-right: 1px solid #ccc;
     overflow: auto;
     box-sizing: border-box;
-    position: absolute;
+    position: fixed;
     background-color: #fff;
     transform: translateX(-200px);
     transition: transform 0.3s ease-in-out;
@@ -115,10 +108,7 @@ const navOpen = ref(false)
   }
 
   article {
-    overflow: auto;
     padding: 10px;
-    height: 100%;
-    box-sizing: border-box;
   }
 }
 </style>
