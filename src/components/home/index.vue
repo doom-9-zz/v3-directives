@@ -8,10 +8,14 @@ const navOpen = ref(false)
 <template>
   <main>
     <header></header>
-    <div>
+    <div class="content">
       <nav :class="[navOpen ? 'nav-open' : '']">
         <Nav @click="navOpen = false" />
       </nav>
+      <div
+        :class="[navOpen ? 'mask-open' : '', 'mask']"
+        @click="navOpen = false"
+      ></div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -45,7 +49,7 @@ const navOpen = ref(false)
     box-sizing: border-box;
   }
 
-  div {
+  .content {
     display: flex;
     height: calc(100vh - 0px);
   }
@@ -101,10 +105,29 @@ const navOpen = ref(false)
     background-color: #fff;
     transform: translateX(-200px);
     transition: transform 0.3s ease-in-out;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
   }
 
   .nav-open {
     transform: translateX(0px);
+  }
+
+  .mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: none;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .mask-open {
+    display: block;
   }
 
   article {
