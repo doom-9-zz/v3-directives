@@ -13,7 +13,8 @@ import {
   vClickOutSide,
   vHover,
   vTextEllipsis,
-  vMoney
+  vMoney,
+  vDoubleClick
 } from '../code/main'
 
 import 'highlight.js/styles/stackoverflow-light.css'
@@ -39,5 +40,6 @@ app.directive('clickoutside', vClickOutSide)
 app.directive('hover', vHover)
 app.directive('textellipsis', vTextEllipsis)
 app.directive('money', vMoney)
+app.directive('doubleclick', vDoubleClick)
 
 app.mount('#app')

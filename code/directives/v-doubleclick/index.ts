@@ -1,0 +1,55 @@
+import { isFunction } from '../../utils/index'
+import { Directive, DirectiveBinding } from 'vue'
+
+const elMapToHandlers: WeakMap<Element, () => void> = new WeakMap()
+
+const addEventListener = (el: Element, binding: DirectiveBinding): void => {
+  const { value, arg } = binding
+  if (!isFunction(value)) return
+  let clickCount = 0
+  let time = 0
+
+  const handler = () => {
+    clickCount++
+    const now = new Date().getTime()
+
+    if (clickCount === 1) {
+      time = now
+      setTimeout(
+        () => {
+          clickCount = 0
+          time = 0
+        },
+        arg ? Number(arg) : 300
+      )
+    }
+
+    if (clickCount === 2) {
+      if (now - time < (arg ? Number(arg) : 300)) {
+        value()
+      }
+      clickCount = 0
+      time = 0
+    }
+  }
+  elMapToHandlers.set(el, handler)
+  el.addEventListener('click', handler)
+}
+
+const vDoubleClick: Directive = {
+  mounted(el, binding) {
+    addEventListener(el, binding)
+  },
+  updated(el, binding) {
+    if (elMapToHandlers.has(el)) {
+      el.removeEventListener('click', elMapToHandlers.get(el))
+      elMapToHandlers.delete(el)
+    }
+
+    addEventListener(el, binding)
+  },
+  beforeUnmount(el) {
+    elMapToHandlers.delete(el)
+  }
+}
+export default vDoubleClick

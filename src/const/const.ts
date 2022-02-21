@@ -142,3 +142,13 @@ export const moneyDemo = `<script setup lang="ts">
 <template>
   <span v-money="123456789.123456"></span>
 </template>`
+
+export const doubleClickDemo = `<script setup lang="ts">
+
+const handler = () => {
+  window.alert('double click')
+}
+</script>
+<template>
+  <button v-doubleclick:500="handler">double click</button>
+</template>`
