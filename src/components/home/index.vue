@@ -12,10 +12,9 @@ const navOpen = ref(false)
       <nav :class="[navOpen ? 'nav-open' : '']">
         <Nav @click="navOpen = false" />
       </nav>
-      <div
-        :class="[navOpen ? 'mask-open' : '', 'mask']"
-        @click="navOpen = false"
-      ></div>
+      <Transition name="fade">
+        <div v-if="navOpen" class="mask" @click="navOpen = false"></div>
+      </Transition>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -114,6 +113,16 @@ const navOpen = ref(false)
     transform: translateX(0px);
   }
 
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
+
+  .fade-enter-to,
+  .fade-leave-from {
+    opacity: 1;
+  }
+
   .mask {
     position: fixed;
     top: 0;
@@ -122,12 +131,7 @@ const navOpen = ref(false)
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
-    display: none;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .mask-open {
-    display: block;
+    transition: opacity 0.3s ease-in-out;
   }
 
   article {
