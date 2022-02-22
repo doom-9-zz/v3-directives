@@ -152,3 +152,19 @@ const handler = () => {
 <template>
   <button v-doubleclick:500="handler">double click</button>
 </template>`
+
+export const draggableDemo = `<script setup lang="ts">
+</script>
+<template>
+  <div
+    v-draggable
+    :style="{
+      width: '100px',
+      height: '100px',
+      background: 'green',
+      transform: 'translateX(50px)'
+    }"
+  >
+    I can drag
+  </div>
+</template>`

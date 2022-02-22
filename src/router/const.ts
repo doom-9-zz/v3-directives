@@ -11,6 +11,7 @@ import vClickOutSide from '../pages/v-clickoutside/index.vue'
 import vTextEllipsis from '../pages/v-textellipsis/index.vue'
 import vMoney from '../pages/v-money/index.vue'
 import vDoubleClick from '../pages/v-doubleclick/index.vue'
+import vDraggable from '../pages/v-draggable/index.vue'
 
 export default [
   { path: '/', component: Readme, name: 'Readme' },
@@ -25,5 +26,6 @@ export default [
   { path: '/hover', component: vHover, name: 'v-hover' },
   { path: '/textellipsis', component: vTextEllipsis, name: 'v-textellipsis' },
   { path: '/money', component: vMoney, name: 'v-money' },
-  { path: '/doubleclick', component: vDoubleClick, name: 'v-doubleclick' }
+  { path: '/doubleclick', component: vDoubleClick, name: 'v-doubleclick' },
+  { path: '/draggable', component: vDraggable, name: 'v-draggable' }
 ]
