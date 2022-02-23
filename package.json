@@ -20,7 +20,10 @@
     "build-tsc-esm-lib": "vue-tsc --noEmit && tsc -b --force ./code/tsconfig.esm.json && tsc -b --force ./code/tsconfig.lib.json",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
   },
   "dependencies": {
     "@highlightjs/vue-plugin": "^2.1.0",
@@ -43,6 +46,7 @@
     "prettier": "^2.5.1",
     "typescript": "^4.5.5",
     "vite": "^2.8.0",
+    "vitepress": "^0.22.3",
     "vue-tsc": "^0.29.8"
   },
   "browserslist": [
