@@ -1,8 +1,8 @@
-# Introduce
+# 介绍
 
-### Text beyond ellipsis
+### 文本超出省略
 
-# Example
+# 示例
 
 <script setup>
 const text =
@@ -20,7 +20,7 @@ const text =
   {{ text }}
 </div>
 
-# Code
+# 代码
 
 ```js
 <script setup lang="ts">

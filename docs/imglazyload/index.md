@@ -1,8 +1,8 @@
-# Introduce
+# 介绍
 
-### Lazy load picture
+### 懒加载图片
 
-# Code
+# 代码
 
 ```js
 <script setup lang="ts">
@@ -21,7 +21,7 @@ const list = Array.from({ length: 100 }).map((_, i) => ({
 </template>
 ```
 
-# Example
+# 示例
 
 <script setup>
 const list = Array.from({ length: 100 }).map((_, i) => ({

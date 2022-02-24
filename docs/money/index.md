@@ -1,15 +1,15 @@
-# Introduce
+# 介绍
 
-### format numbers
+### 格式化数字
 
-# Example
+# 示例
 
 <script setup>
 </script>
 
 <span v-money="123456789.123456"></span>
 
-# Code
+# 代码
 
 ```js
 <script setup lang="ts">

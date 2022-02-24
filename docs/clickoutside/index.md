@@ -1,8 +1,8 @@
-# Introduce
+# 介绍
 
-### Callback executed when an area outside the element is clicked
+### 当点击元素外部时触发回调
 
-# Example
+# 示例
 
 <script setup>
 const handler = () => {
@@ -10,9 +10,9 @@ const handler = () => {
 }
 </script>
 
-<button v-clickoutside="handler">click</button>
+<button v-clickoutside="handler">点击外部</button>
 
-# Code
+# 代码
 
 ```js
 <script setup lang="ts">

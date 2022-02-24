@@ -1,8 +1,8 @@
-# Introduce
+# 介绍
 
-### Copy incoming values
+### 复制传入的值
 
-# Example
+# 示例
 
 <script setup >
 import { ref } from 'vue'
@@ -10,8 +10,8 @@ import { ref } from 'vue'
 const value = ref('You are about to copy these values')
 </script>
 
-<p>Value to be copied:{{ value }}</p>
-<button v-copy="value">click me to copy</button>
+<p>将要复制的值:{{ value }}</p>
+<button v-copy="value">点击我复制</button>
 <button
   @click="
     () => {
@@ -19,11 +19,11 @@ const value = ref('You are about to copy these values')
     }
   "
 >
-  change the value to be copied
+  改变将要复制的值
 </button>
 <input type="text" placeholder="paste here" />
 
-# Code
+# 代码
 
 ```js
 <script setup lang="ts">

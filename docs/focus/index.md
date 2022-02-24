@@ -1,12 +1,12 @@
-# Introduce
+# 介绍
 
-### Auto focus on the specified element
+### 自动聚焦元素
 
-# Example
+# 示例
 
 <input v-focus />
 
-# Code
+# 代码
 
 ```js
 <template>

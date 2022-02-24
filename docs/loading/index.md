@@ -1,8 +1,8 @@
-# Introduce
+# 介绍
 
-### Display the loading effect on the specified element
+### 在元素上添加 loading 效果
 
-# Example
+# 示例
 
 <script setup>
 import { ref } from 'vue'
@@ -26,9 +26,9 @@ const style = {
   v-loading="loading"
   :style="style"
 ></div>
-<button @click="changeLoading">switch</button>
+<button @click="changeLoading">切换</button>
 
-# Code
+# 代码
 
 ```js
 <script setup lang="ts">

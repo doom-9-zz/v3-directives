@@ -1,8 +1,8 @@
-# Introduce
+# 介绍
 
-### Execute the bound event only once
+### 只触发一次回调
 
-# Example
+# 示例
 
 <script setup>
 const handler = () => {
@@ -10,9 +10,9 @@ const handler = () => {
 }
 </script>
 
-<button v-ononce:click="handler">only alert once</button>
+<button v-ononce:click="handler">只会 alert 一次</button>
 
-# Code
+# 代码
 
 ```js
 <script setup lang="ts">

@@ -1,8 +1,8 @@
-# Introduce
+# 介绍
 
-### Keep clicking for a period of time and trigger the callback
+### 长时间按压触发回调
 
-# Example
+# 示例
 
 <script setup>
 const handle = () => {
@@ -10,9 +10,9 @@ const handle = () => {
 }
 </script>
 
-<button v-longpress:1000="handle">Stay with me for a long time</button>
+<button v-longpress:1000="handle">长时间按压我</button>
 
-# Code
+# 代码
 
 ```js
 <script setup lang="ts">

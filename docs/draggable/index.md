@@ -1,8 +1,8 @@
-# Introduce
+# 介绍
 
-### drag element
+### 拖动元素
 
-# Example
+# 示例
 
 <script setup>
 </script>
@@ -16,10 +16,10 @@
     transform: 'translateX(50px)'
   }"
 >
-  I can drag
+  我能被拖动
 </div>
 
-# Code
+# 代码
 
 ```js
 <script setup lang="ts">

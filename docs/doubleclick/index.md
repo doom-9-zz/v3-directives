@@ -1,8 +1,8 @@
-# Introduce
+# 介绍
 
-### Double click to trigger callback
+### 双击触发回调
 
-# Example
+# 示例
 
 <script setup>
 
@@ -11,9 +11,9 @@ const handler = () => {
 }
 </script>
 
-<button v-doubleclick:500="handler">double click</button>
+<button v-doubleclick:500="handler">双击</button>
 
-# Code
+# 代码
 
 ```js
 <script setup lang="ts">

@@ -1,8 +1,8 @@
-# Introduce
+# 介绍
 
-### Trigger callback when hover element
+### 划过元素触发回调
 
-# Example
+# 示例
 
 <script setup>
 const handler = () => {
@@ -18,10 +18,10 @@ const handler = () => {
     border: '1px solid #ccc'
   }"
 >
-  Hover
+  划过
 </div>
 
-# Code
+# 代码
 
 ```js
 <script setup lang="ts">

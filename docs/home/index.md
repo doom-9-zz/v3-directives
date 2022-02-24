@@ -1,15 +1,15 @@
-# Introduce
+# 介绍
 
-### :tada:Directive collection for vue3
+### :tada:适用于 vue3 的指令集合
 
-# How to use
+# 怎样使用
 
 ```js
 import { vCopy } from 'v3-directives'
 createApp(App).directive('copy', vCopy).mount('#app')
 ```
 
-# Then you can use like this
+# 然后你就可以这样使用
 
 ```js
 <script setup lang="ts">

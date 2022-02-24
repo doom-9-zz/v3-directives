@@ -1,8 +1,8 @@
-# Introduce
+# 介绍
 
-### Prevent continuous execution of incoming callbacks
+### 防抖动
 
-# Example
+# 示例
 
 <script setup>
 const handle = () => {
@@ -10,9 +10,9 @@ const handle = () => {
 }
 </script>
 
-<button v-debounce:click-1000="handle">Quick click on me</button>
+<button v-debounce:click-1000="handle">快速点击我</button>
 
-# Code
+# 代码
 
 ```js
 <script setup lang="ts">
