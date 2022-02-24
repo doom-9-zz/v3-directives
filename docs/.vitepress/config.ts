@@ -74,7 +74,7 @@ export default defineConfig({
             link: '/draggable/'
           }
         ],
-        selectText: '选择语言',
+        selectText: 'Languages',
         label: '简体中文',
         nav: [
           {
@@ -88,62 +88,62 @@ export default defineConfig({
         sidebar: [
           {
             text: 'Introduction',
-            link: '/home/'
+            link: '/en/home/'
           },
           {
             text: 'copy',
-            link: '/copy/'
+            link: '/en/copy/'
           },
           {
             text: 'focus',
-            link: '/focus/'
+            link: '/en/focus/'
           },
           {
             text: 'debounce',
-            link: '/debounce/'
+            link: '/en/debounce/'
           },
           {
             text: 'longpress',
-            link: '/longpress/'
+            link: '/en/longpress/'
           },
           {
             text: 'loading',
-            link: '/loading/'
+            link: '/en/loading/'
           },
           {
             text: 'imglazyload',
-            link: '/imglazyload/'
+            link: '/en/imglazyload/'
           },
           {
             text: 'ononce',
-            link: '/ononce/'
+            link: '/en/ononce/'
           },
           {
             text: 'clickoutside',
-            link: '/clickoutside/'
+            link: '/en/clickoutside/'
           },
           {
             text: 'hover',
-            link: '/hover/'
+            link: '/en/hover/'
           },
           {
             text: 'textellipsis',
-            link: '/textellipsis/'
+            link: '/en/textellipsis/'
           },
           {
             text: 'money',
-            link: '/money/'
+            link: '/en/money/'
           },
           {
             text: 'doubleclick',
-            link: '/doubleclick/'
+            link: '/en/doubleclick/'
           },
           {
             text: 'draggable',
-            link: '/draggable/'
+            link: '/en/draggable/'
           }
         ],
-        selectText: 'Languages',
+        selectText: '选择语言',
         label: 'English',
         nav: [
           {
