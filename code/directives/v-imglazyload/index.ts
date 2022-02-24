@@ -1,9 +1,9 @@
 import { Directive, DirectiveBinding } from 'vue'
 
-const options = {
-  root: document.querySelector('html'),
-  threshold: 0.1
-}
+let options: {
+  root: HTMLElement | null
+  threshold: number
+} | null
 
 const callback: IntersectionObserverCallback = (entries) => {
   entries.forEach((entry) => {
@@ -16,10 +16,7 @@ const callback: IntersectionObserverCallback = (entries) => {
   })
 }
 
-const observer: IntersectionObserver = new IntersectionObserver(
-  callback,
-  options
-)
+let observer: IntersectionObserver | null
 
 const observerHandler: (el: Element, binding: DirectiveBinding) => void = (
   el,
@@ -28,11 +25,22 @@ const observerHandler: (el: Element, binding: DirectiveBinding) => void = (
   if (el.tagName !== 'IMG') return
   const { value } = binding
   el.setAttribute('data-src', String(value))
-  observer.observe(el)
+  observer?.observe(el)
 }
 
 const vImgLazyLoad: Directive = {
   mounted(el, binding) {
+    if (options === null) {
+      options = {
+        root: document.querySelector('html'),
+        threshold: 0.1
+      }
+    }
+
+    if (observer === null) {
+      observer = new IntersectionObserver(callback, options)
+    }
+
     observerHandler(el, binding)
   },
   updated(el, binding) {
