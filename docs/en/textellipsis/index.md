@@ -13,7 +13,7 @@ const text =
   v-textellipsis:3
   :style="{
     width: '200px',
-    height: '55px',
+    height: '70px',
     border: '1px solid #ccc'
   }"
 >
