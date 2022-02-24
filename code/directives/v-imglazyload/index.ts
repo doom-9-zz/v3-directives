@@ -16,7 +16,7 @@ const callback: IntersectionObserverCallback = (entries) => {
   })
 }
 
-let observer: IntersectionObserver | null
+let observer: IntersectionObserver | null = null
 
 const observerHandler: (el: Element, binding: DirectiveBinding) => void = (
   el,
