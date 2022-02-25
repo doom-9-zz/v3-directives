@@ -1,8 +1,8 @@
-# 介绍
+# Introduce
 
-### 元素闪烁
+### element flicker
 
-# 示例
+# Example
 
 <div v-flicker :style="{
     width: '100px',
@@ -10,7 +10,7 @@
     background: 'green',
 }"></div>
 
-# 代码
+# Code
 
 ```js
 <template>

@@ -14,7 +14,8 @@ import {
   vTextEllipsis,
   vMoney,
   vDoubleClick,
-  vDraggable
+  vDraggable,
+  vFlicker
 } from '../../../code/main'
 
 export default {
@@ -33,5 +34,6 @@ export default {
     app.directive('money', vMoney)
     app.directive('doubleclick', vDoubleClick)
     app.directive('draggable', vDraggable)
+    app.directive('flicker', vFlicker)
   }
 }

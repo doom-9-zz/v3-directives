@@ -72,6 +72,10 @@ export default defineConfig({
           {
             text: 'draggable',
             link: '/draggable/'
+          },
+          {
+            text: 'flicker',
+            link: '/flicker/'
           }
         ],
         selectText: 'Languages',
@@ -141,6 +145,10 @@ export default defineConfig({
           {
             text: 'draggable',
             link: '/en/draggable/'
+          },
+          {
+            text: 'flicker',
+            link: '/en/flicker/'
           }
         ],
         selectText: '选择语言',
