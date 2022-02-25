@@ -29,7 +29,7 @@ const observerHandler: (el: Element, binding: DirectiveBinding) => void = (
 }
 
 const vImgLazyLoad: Directive = {
-  mounted(el, binding) {
+  mounted(el: HTMLElement, binding) {
     if (options === null) {
       options = {
         root: document.querySelector('html'),
@@ -43,10 +43,10 @@ const vImgLazyLoad: Directive = {
 
     observerHandler(el, binding)
   },
-  updated(el, binding) {
+  updated(el: HTMLElement, binding) {
     observerHandler(el, binding)
   },
-  beforeUnmount(el) {
+  beforeUnmount(el: HTMLElement) {
     if (observer) {
       observer.unobserve(el)
     }

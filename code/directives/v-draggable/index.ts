@@ -1,7 +1,7 @@
 import { Directive } from 'vue'
 
 const vDraggable: Directive = {
-  mounted(el) {
+  mounted(el: HTMLElement) {
     let startX = 0
     let startY = 0
 

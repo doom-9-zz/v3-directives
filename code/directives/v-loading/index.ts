@@ -33,13 +33,13 @@ const appendChild = (el: HTMLElement): void => {
 }
 
 const vLoading: Directive = {
-  mounted(el, binding) {
+  mounted(el: HTMLElement, binding) {
     const { value } = binding
     if (!isBoolean(value)) return
     if (!value) return
     appendChild(el)
   },
-  updated(el, binding) {
+  updated(el: HTMLElement, binding) {
     const { value } = binding
     const hasMaskElement = elMapToMaskElement.has(el)
     const hasChangedPosition = elMapToHasChangedPosition.has(el)
@@ -53,11 +53,12 @@ const vLoading: Directive = {
         el.style.position = 'static'
         elMapToHasChangedPosition.delete(el)
       }
-      el.removeChild(elMapToMaskElement.get(el))
+      const maskElement = elMapToMaskElement.get(el)
+      maskElement && el.removeChild(maskElement)
       elMapToMaskElement.delete(el)
     }
   },
-  beforeUnmount(el) {
+  beforeUnmount(el: HTMLElement) {
     elMapToMaskElement.delete(el)
     elMapToHasChangedPosition.delete(el)
   }

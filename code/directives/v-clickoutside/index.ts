@@ -15,19 +15,22 @@ const addEventListener = (el: Element, binding: DirectiveBinding) => {
 }
 
 const vClickOutSide: Directive = {
-  mounted(el, binding) {
+  mounted(el: HTMLElement, binding) {
     addEventListener(el, binding)
   },
-  updated(el, binding) {
+  updated(el: HTMLElement, binding) {
     if (elMapToHandlers.has(el)) {
-      window.removeEventListener('click', elMapToHandlers.get(el)!)
+      const handler = elMapToHandlers.get(el)
+      handler && window.removeEventListener('click', handler)
       elMapToHandlers.delete(el)
     }
     addEventListener(el, binding)
   },
   beforeUnmount(el) {
     if (elMapToHandlers.has(el)) {
-      window.removeEventListener('click', elMapToHandlers.get(el)!)
+      const handler = elMapToHandlers.get(el)
+
+      handler && window.removeEventListener('click', handler)
       elMapToHandlers.delete(el)
     }
   }

@@ -1,6 +1,6 @@
 import { Directive } from 'vue'
 
-const vFocus: Directive = {
+const vFlicker: Directive = {
   mounted(el: HTMLElement) {
     el.focus && el.focus()
   },
@@ -8,4 +8,4 @@ const vFocus: Directive = {
     el.focus && el.focus()
   }
 }
-export default vFocus
+export default vFlicker

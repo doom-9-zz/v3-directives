@@ -27,10 +27,10 @@ const setInnerHTML = (el: HTMLElement, binding: DirectiveBinding) => {
 }
 
 const vMoney: Directive = {
-  mounted(el, binding) {
+  mounted(el: HTMLElement, binding) {
     setInnerHTML(el, binding)
   },
-  updated(el, binding) {
+  updated(el: HTMLElement, binding) {
     setInnerHTML(el, binding)
   }
 }

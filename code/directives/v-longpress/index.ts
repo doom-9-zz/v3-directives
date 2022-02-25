@@ -22,21 +22,23 @@ const addEventListener = (el: Element, binding: DirectiveBinding) => {
 }
 
 const vLongPress: Directive = {
-  mounted(el, binding) {
+  mounted(el: HTMLElement, binding) {
     addEventListener(el, binding)
   },
-  updated(el, binding) {
+  updated(el: HTMLElement, binding) {
     if (elMapToMouseDownHandlers.has(el)) {
-      el.removeEventListener('mousedown', elMapToMouseDownHandlers.get(el))
+      const pressHandler = elMapToMouseDownHandlers.get(el)
+      pressHandler && el.removeEventListener('mousedown', pressHandler)
       elMapToMouseDownHandlers.delete(el)
     }
     if (elMapToMouseUpHandlers.has(el)) {
-      el.removeEventListener('mouseup', elMapToMouseUpHandlers.get(el))
+      const pressHandler = elMapToMouseDownHandlers.get(el)
+      pressHandler && el.removeEventListener('mouseup', pressHandler)
       elMapToMouseUpHandlers.delete(el)
     }
     addEventListener(el, binding)
   },
-  beforeUnmount(el) {
+  beforeUnmount(el: HTMLElement) {
     elMapToMouseDownHandlers.delete(el)
     elMapToMouseUpHandlers.delete(el)
   }

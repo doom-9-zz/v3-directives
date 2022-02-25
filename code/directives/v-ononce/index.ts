@@ -5,7 +5,7 @@ const elMapToHandlers: WeakMap<Element, () => void> = new WeakMap()
 
 const elMapToEventName: WeakMap<Element, string> = new WeakMap()
 
-const addEventListener = (el: Element, binding: DirectiveBinding) => {
+const addEventListener = (el: HTMLElement, binding: DirectiveBinding) => {
   const { value, arg } = binding
   if (!isFunction(value)) return
 
@@ -21,19 +21,23 @@ const addEventListener = (el: Element, binding: DirectiveBinding) => {
 }
 
 const vOnOnce: Directive = {
-  mounted(el, binding) {
+  mounted(el: HTMLElement, binding) {
     addEventListener(el, binding)
   },
-  updated(el, binding) {
+  updated(el: HTMLElement, binding) {
     if (elMapToHandlers.has(el)) {
-      el.removeEventListener(elMapToEventName.get(el), elMapToHandlers.get(el))
+      const eventName = elMapToEventName.get(el)
+      const handler = elMapToHandlers.get(el)
+      handler &&
+        eventName &&
+        el.removeEventListener(eventName as keyof HTMLElementEventMap, handler)
       elMapToHandlers.delete(el)
       elMapToEventName.delete(el)
     }
 
     addEventListener(el, binding)
   },
-  beforeUnmount(el) {
+  beforeUnmount(el: HTMLElement) {
     elMapToHandlers.delete(el)
     elMapToEventName.delete(el)
   }

@@ -14,10 +14,10 @@ const handler = (el: HTMLElement, binding: DirectiveBinding) => {
 }
 
 const vTextEllipsis: Directive = {
-  mounted(el, binding) {
+  mounted(el: HTMLElement, binding) {
     handler(el, binding)
   },
-  updated(el, binding) {
+  updated(el: HTMLElement, binding) {
     handler(el, binding)
   }
 }

@@ -20,12 +20,13 @@ const addEventListener = (el: Element, binding: DirectiveBinding) => {
 }
 
 const vCopy: Directive = {
-  mounted(el, binding) {
+  mounted(el: HTMLElement, binding) {
     addEventListener(el, binding)
   },
-  updated(el, binding) {
+  updated(el: HTMLElement, binding) {
     if (elMapToHandlers.has(el)) {
-      el.removeEventListener('click', elMapToHandlers.get(el))
+      const handler = elMapToHandlers.get(el)
+      handler && el.removeEventListener('click', handler)
       elMapToHandlers.delete(el)
     }
     addEventListener(el, binding)
