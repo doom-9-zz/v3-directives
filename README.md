@@ -21,9 +21,27 @@ npm install v3-directives --save
 ```js
 import { vCopy } from 'v3-directives'
 createApp(App).directive('copy', vCopy).mount('#app')
+```
 
+```html
+<script setup lang="ts">
+  import { ref } from 'vue'
 
-<button v-copy="'value'">click me to copy</button>
+  const value = ref('You are about to copy these values')
+</script>
+
+<template>
+  <button v-copy="value">click me to copy</button>
+  <button
+    @click="
+      () => {
+        value = 'Changed'
+      }
+    "
+  >
+    change the value to be copied
+  </button>
+</template>
 ```
 
 # List
@@ -42,6 +60,26 @@ createApp(App).directive('copy', vCopy).mount('#app')
 - [x] v-money.
 - [x] v-ononce.
 - [x] v-textellipsis.
+
+## 运行项目
+
+安装依赖
+
+```shell
+npm install
+```
+
+启动本地调试
+
+```shell
+npm run docs:dev
+```
+
+编译打包，生成编译后的目录：es,lib
+
+```shell
+npm run build-tsc-esm-lib
+```
 
 # Author
 
