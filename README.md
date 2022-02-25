@@ -26,6 +26,23 @@ createApp(App).directive('copy', vCopy).mount('#app')
 <button v-copy="'value'">click me to copy</button>
 ```
 
+# List
+
+- [x] v-clickoutside.
+- [x] v-copy.
+- [x] v-debounce.
+- [x] v-doubleclick.
+- [x] v-draggable.
+- [x] v-flicker.
+- [x] v-hover.
+- [x] v-focus.
+- [x] v-imglazyload.
+- [x] v-loading.
+- [x] v-longpress.
+- [x] v-money.
+- [x] v-ononce.
+- [x] v-textellipsis.
+
 # Author
 
 [doom-9](https://github.com/doom-9)
