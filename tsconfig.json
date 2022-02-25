@@ -16,6 +16,5 @@
     "code/**/*.d.ts",
     "code/**/*.tsx",
     "code/**/*.vue"
-  ],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  ]
 }
