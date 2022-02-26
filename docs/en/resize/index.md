@@ -1,8 +1,8 @@
-# 介绍
+# Introduce
 
-### 点击调整大小
+### Click to resize
 
-# 示例
+# Example
 
 <div v-resize :style="{
     width: '100px',
@@ -10,7 +10,7 @@
     background: 'green',
 }"></div>
 
-# 代码
+# Code
 
 ```html
 <template>
