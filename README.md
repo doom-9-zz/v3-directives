@@ -60,6 +60,7 @@ createApp(App).directive('copy', vCopy).mount('#app')
 - [x] v-money.
 - [x] v-ononce.
 - [x] v-textellipsis.
+- [x] v-resize.
 
 ## 运行项目
 
