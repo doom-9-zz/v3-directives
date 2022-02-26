@@ -12,7 +12,7 @@
 
 # Code
 
-```js
+```html
 <template>
   <div
     v-flicker:style="{

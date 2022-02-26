@@ -15,12 +15,11 @@ const handler = () => {
 
 # Code
 
-```js
+```html
 <script setup lang="ts">
-
-const handler = () => {
-  window.alert('double click')
-}
+  const handler = () => {
+    window.alert('double click')
+  }
 </script>
 <template>
   <button v-doubleclick:500="handler">double click</button>

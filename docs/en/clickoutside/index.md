@@ -14,11 +14,11 @@ const handler = () => {
 
 # Code
 
-```js
+```html
 <script setup lang="ts">
-const handler = () => {
-  window.alert('clicked outside')
-}
+  const handler = () => {
+    window.alert('clicked outside')
+  }
 </script>
 <template>
   <button v-clickoutside="handler">click</button>

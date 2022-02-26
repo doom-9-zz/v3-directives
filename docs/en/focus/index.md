@@ -8,7 +8,7 @@
 
 # Code
 
-```js
+```html
 <template>
   <input v-focus />
 </template>

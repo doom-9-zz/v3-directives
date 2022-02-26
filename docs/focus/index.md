@@ -8,7 +8,7 @@
 
 # 代码
 
-```js
+```html
 <template>
   <input v-focus />
 </template>

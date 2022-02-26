@@ -23,11 +23,11 @@ const handler = () => {
 
 # 代码
 
-```js
+```html
 <script setup lang="ts">
-const handler = () => {
-  window.alert('hover')
-}
+  const handler = () => {
+    window.alert('hover')
+  }
 </script>
 <template>
   <div

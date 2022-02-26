@@ -14,11 +14,11 @@ const handler = () => {
 
 # Code
 
-```js
+```html
 <script setup lang="ts">
-const handler = () => {
-  window.alert('Hello!')
-}
+  const handler = () => {
+    window.alert('Hello!')
+  }
 </script>
 <template>
   <button v-ononce:click="handler">only alert once</button>

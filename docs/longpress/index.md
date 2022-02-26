@@ -14,11 +14,11 @@ const handle = () => {
 
 # 代码
 
-```js
+```html
 <script setup lang="ts">
-const handle = () => {
-  window.alert('long press')
-}
+  const handle = () => {
+    window.alert('long press')
+  }
 </script>
 
 <template>

@@ -76,6 +76,10 @@ export default defineConfig({
           {
             text: 'flicker',
             link: '/flicker/'
+          },
+          {
+            text: 'resize',
+            link: '/resize/'
           }
         ],
         selectText: 'Languages',

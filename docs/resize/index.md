@@ -4,7 +4,7 @@
 
 # 示例
 
-<div v-flicker :style="{
+<div v-resize :style="{
     width: '100px',
     height: '100px',
     background: 'green',
@@ -15,7 +15,8 @@
 ```html
 <template>
   <div
-    v-flicker:style="{
+    v-resize
+    :style="{
     width: '100px',
     height: '100px',
     background: 'green',

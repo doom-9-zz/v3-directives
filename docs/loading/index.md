@@ -30,15 +30,15 @@ const style = {
 
 # 代码
 
-```js
+```html
 <script setup lang="ts">
-import { ref } from 'vue'
+  import { ref } from 'vue'
 
-const loading = ref(false)
+  const loading = ref(false)
 
-const changeLoading = () => {
-  loading.value = !loading.value
-}
+  const changeLoading = () => {
+    loading.value = !loading.value
+  }
 </script>
 
 <template>

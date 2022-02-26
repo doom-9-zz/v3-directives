@@ -11,11 +11,11 @@ createApp(App).directive('copy', vCopy).mount('#app')
 
 # 然后你就可以这样使用
 
-```js
+```html
 <script setup lang="ts">
-import { ref } from 'vue'
+  import { ref } from 'vue'
 
-const value = ref('You are about to copy these values')
+  const value = ref('You are about to copy these values')
 </script>
 
 <template>

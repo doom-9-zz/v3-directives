@@ -4,12 +4,12 @@
 
 # 代码
 
-```js
+```html
 <script setup lang="ts">
-const list = Array.from({ length: 100 }).map((_, i) => ({
-  id: i,
-  img: 'https://avatars.githubusercontent.com/u/65016011?v=4'
-}))
+  const list = Array.from({ length: 100 }).map((_, i) => ({
+    id: i,
+    img: 'https://avatars.githubusercontent.com/u/65016011?v=4'
+  }))
 </script>
 <template>
   <img

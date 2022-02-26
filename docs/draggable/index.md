@@ -21,9 +21,8 @@
 
 # 代码
 
-```js
-<script setup lang="ts">
-</script>
+```html
+<script setup lang="ts"></script>
 <template>
   <div
     v-draggable
