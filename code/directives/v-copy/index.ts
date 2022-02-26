@@ -1,12 +1,11 @@
 import { Directive, DirectiveBinding } from 'vue'
 
-const elMapToHandlers: WeakMap<Element, () => void> = new WeakMap()
-
 const addEventListener = (el: Element, binding: DirectiveBinding) => {
   const { value } = binding
+  el.setAttribute('data-copy-value', String(value))
   const copyHandler = (): void => {
     navigator.clipboard
-      .writeText(String(value))
+      .writeText(el.getAttribute('data-copy-value') || '')
       .then(() => {
         window.alert('Copy successful')
       })
@@ -15,7 +14,6 @@ const addEventListener = (el: Element, binding: DirectiveBinding) => {
       })
   }
 
-  elMapToHandlers.set(el, copyHandler)
   el.addEventListener('click', copyHandler)
 }
 
@@ -24,15 +22,8 @@ const vCopy: Directive = {
     addEventListener(el, binding)
   },
   updated(el: HTMLElement, binding) {
-    if (elMapToHandlers.has(el)) {
-      const handler = elMapToHandlers.get(el)
-      handler && el.removeEventListener('click', handler)
-      elMapToHandlers.delete(el)
-    }
-    addEventListener(el, binding)
-  },
-  beforeUnmount(el) {
-    elMapToHandlers.delete(el)
+    const { value } = binding
+    el.setAttribute('data-copy-value', String(value))
   }
 }
 export default vCopy
