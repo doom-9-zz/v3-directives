@@ -1,2 +1,1 @@
-- [ ] 调整大小.
 - [ ] watch node change.
